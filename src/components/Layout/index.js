@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './Layout.module.css';
 
-const Layout = ({ id, title, descr, urlBg, colorBg }) => {
+const Layout = ({ id, title, descr, urlBg, colorBg, children }) => {
   const style = {};
   if (urlBg) { style.backgroundImage = `url(${urlBg})` };
   if (colorBg) { style.backgroundColor = colorBg };
@@ -15,7 +15,7 @@ const Layout = ({ id, title, descr, urlBg, colorBg }) => {
             <span className={s.separator}></span>
           </div>
           <div className={`${s.desc} ${s.full}`}>
-            {descr && <p>{descr}</p>}
+            {children}
           </div>
         </article>
       </div>
