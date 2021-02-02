@@ -1,6 +1,7 @@
 import React from 'react';
-import s from './Header.module.css';
 import cl from 'classnames';
+
+import s from './Header.module.css';
 
 const Header = ({ title, descr, onClickButton }) => {
   const handleClick = () => {

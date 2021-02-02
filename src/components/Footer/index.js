@@ -1,6 +1,7 @@
 import React from 'react';
-import s from './Footer.module.css';
 import cl from 'classnames';
+
+import s from './Footer.module.css';
 
 const Footer = () => {
   return (

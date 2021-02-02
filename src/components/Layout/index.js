@@ -1,6 +1,7 @@
 import React from 'react';
-import s from './Layout.module.css';
 import cl from 'classnames';
+
+import s from './Layout.module.css';
 
 const Layout = ({ id, title, urlBg, colorBg, children }) => {
   const style = {};

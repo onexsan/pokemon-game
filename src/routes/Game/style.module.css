@@ -5,18 +5,27 @@
   flex-wrap: wrap;
 }
 
-.routeButton {
-  background-color: #f300b4;
-  color: #fff;
-  border: 1px solid transparent;
-  font-weight: bold;
-  text-transform: uppercase;
-  padding: 10px;
+.flex.spaceEvenly {
+  padding: 30px 0px 0px 0px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-.routeButton:hover {
-  background-color: transparent;
-  color: #f300b4;
-  border: 1px solid #f300b4;
+h1 {
+  font-size: 65px;
+  font-weight: normal;
+  font-style: italic;
+  color: #181d23;
+  line-height: 65px;
+}
+
+.homeButton {
+  cursor: pointer;
+}
+
+.homeButton:hover img {
+  filter: grayscale(100);
   transition: .5s;
 }

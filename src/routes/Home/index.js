@@ -1,11 +1,13 @@
 import React from 'react';
-import style from './style.module.css';
+import cl from 'classnames';
 import Header from '../../components/Header';
 import Layout from '../../components/Layout';
 import Footer from '../../components/Footer';
+import MenuHeader from '../../components/MenuHeader';
 import PokemonCard from '../../components/PokemonCard';
 import Background from '../../assets/bg3.jpg';
-import cl from 'classnames';
+
+import style from './style.module.css';
 
 import POKEMONS from '../../data/pokemon.json';
 
@@ -15,6 +17,7 @@ const HomePage = ({ onChangePage }) => {
   }
   return (
     <>
+      <MenuHeader></MenuHeader>
       <Header title="Pokemon Game" descr="This is simple triple triad card game" onClickButton={handleClickButton} />
       <Layout id="my-prop-id" title="What is this game about?" urlBg={Background}>
         <p>In the game two players face off against one another, one side playing as "blue", the other as "red" on a 3x3 grid.

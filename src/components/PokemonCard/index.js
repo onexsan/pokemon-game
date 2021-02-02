@@ -1,8 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
-import s from './PokemonCard.module.css';
-import cardBackImg from './assets/card-back-side.jpg';
 import cl from 'classnames';
+import cardBackImg from './assets/card-back-side.jpg';
+
+import s from './PokemonCard.module.css';
 
 const PokemonCard = ({ name, img, id, type, values }) => {
   const [isActive, setActive] = useState(false);
