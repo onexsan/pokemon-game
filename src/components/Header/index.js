@@ -1,13 +1,20 @@
 import React from 'react';
 import s from './Header.module.css';
+import cl from 'classnames';
 
-const Header = (props) => {
+const Header = ({ title, descr, onClickButton }) => {
+  const handleClick = () => {
+    onClickButton && onClickButton('game');
+  }
   return (
-    <header className={s.root}>
-      <div className={s.forest}></div>
-      <div className={s.container}>
-        {props.title && <h1>{props.title}</h1>}
-        {props.descr && <p>{props.descr}</p>}
+    <header className={cl(s.root)}>
+      <div className={cl(s.forest)}></div>
+      <div className={cl(s.container)}>
+        {title && <h1>{title}</h1>}
+        {descr && <p>{descr}</p>}
+        <button className={cl(s.routeButton)} onClick={handleClick}>
+          Start Game
+        </button>
       </div>
     </header>
   )
