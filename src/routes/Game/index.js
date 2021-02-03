@@ -3,7 +3,7 @@ import cl from 'classnames';
 import Layout from '../../components/Layout';
 import PokemonCard from '../../components/PokemonCard';
 import MenuHeader from '../../components/MenuHeader';
-import homeIcon from '../../assets/home.svg'
+import homeIcon from '../../assets/home.png'
 
 import style from './style.module.css';
 
