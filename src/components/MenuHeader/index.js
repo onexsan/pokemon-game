@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Menu from '../Menu';
 import Navbar from '../Navbar';
 
-const MenuHeader = () => {
+const MenuHeader = ({ bgActive }) => {
 
   const [isActive, setActive] = useState(null);
 
@@ -14,7 +14,7 @@ const MenuHeader = () => {
   return (
     <>
       <Menu isOpen={isActive} ></Menu>
-      <Navbar isOpen={isActive} onChangeActive={handleActive}></Navbar>
+      <Navbar isOpen={isActive} bgActive={bgActive} onChangeActive={handleActive}></Navbar>
     </>
   )
 }

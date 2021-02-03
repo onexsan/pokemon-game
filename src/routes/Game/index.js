@@ -15,7 +15,7 @@ const GamePage = ({ onChangePage }) => {
   }
   return (
     <>
-      <MenuHeader></MenuHeader>
+      <MenuHeader bgActive={true}></MenuHeader>
       <div className={cl(style.flex, style.spaceEvenly)}>
         <h1>The Game Page</h1>
         <span className={style.homeButton} onClick={handleClick}>

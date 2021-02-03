@@ -3,10 +3,10 @@ import cl from 'classnames';
 
 import s from './Navbar.module.css';
 
-const Navbar = ({ isOpen, onChangeActive }) => {
+const Navbar = ({ isOpen, onChangeActive, bgActive = false }) => {
 
   return (
-    <nav id={s.navbar} className={cl({ [s.bgActive]: s.bgActive })}>
+    <nav id={s.navbar} className={cl({ [s.bgActive]: bgActive })}>
       <div className={s.navWrapper}>
         <p className={s.brand}>
           LOGO
