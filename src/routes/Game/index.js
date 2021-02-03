@@ -2,6 +2,7 @@ import React from 'react';
 import cl from 'classnames';
 import Layout from '../../components/Layout';
 import PokemonCard from '../../components/PokemonCard';
+import MenuHeader from '../../components/MenuHeader';
 import homeIcon from '../../assets/home.svg'
 
 import style from './style.module.css';
@@ -14,6 +15,7 @@ const GamePage = ({ onChangePage }) => {
   }
   return (
     <>
+      <MenuHeader></MenuHeader>
       <div className={cl(style.flex, style.spaceEvenly)}>
         <h1>The Game Page</h1>
         <span className={style.homeButton} onClick={handleClick}>

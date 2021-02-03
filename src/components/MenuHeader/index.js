@@ -5,10 +5,10 @@ import Navbar from '../Navbar';
 
 const MenuHeader = () => {
 
-  const [isActive, setActive] = useState(false);
+  const [isActive, setActive] = useState(null);
 
   const handleActive = () => {
-    setActive(!isActive);
+    setActive(prevState => !prevState);
   }
 
   return (

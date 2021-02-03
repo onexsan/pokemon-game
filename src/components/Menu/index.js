@@ -4,7 +4,10 @@ import s from './Menu.module.css';
 
 const Menu = ({ isOpen }) => {
   return (
-    <div className={cl(s.menuContainer, isOpen ? s.active : s.deactive)}>
+    <div className={cl(s.menuContainer, {
+      [s.active]: isOpen === true,
+      [s.deactive]: isOpen === false
+    })}>
       <div className={cl(s.overlay)} />
       <div className={cl(s.menuItems)}>
         <ul>
