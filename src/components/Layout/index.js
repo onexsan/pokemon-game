@@ -1,4 +1,6 @@
 import React from 'react';
+import cl from 'classnames';
+
 import s from './Layout.module.css';
 
 const Layout = ({ id, title, urlBg, colorBg, children }) => {
@@ -7,14 +9,14 @@ const Layout = ({ id, title, urlBg, colorBg, children }) => {
   if (colorBg) { style.backgroundColor = colorBg };
 
   return (
-    <section className={s.root} id={id} style={style} >
-      <div className={s.wrapper}>
+    <section className={cl(s.root)} id={id} style={style} >
+      <div className={cl(s.wrapper)}>
         <article>
-          <div className={s.title}>
+          <div className={cl(s.title)}>
             {title && <h3>{title}</h3>}
-            <span className={s.separator}></span>
+            <span className={cl(s.separator)}></span>
           </div>
-          <div className={`${s.desc} ${s.full}`}>
+          <div className={cl(s.desc, s.full)}>
             {children}
           </div>
         </article>

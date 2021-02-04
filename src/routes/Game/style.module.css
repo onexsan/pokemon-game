@@ -1,0 +1,31 @@
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.flex.spaceEvenly {
+  padding: 100px 0px 0px 0px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+h1 {
+  font-size: 65px;
+  font-weight: normal;
+  font-style: italic;
+  color: #181d23;
+  line-height: 65px;
+}
+
+.homeButton {
+  cursor: pointer;
+}
+
+.homeButton:hover img {
+  filter: grayscale(100);
+  transition: .5s;
+}
