@@ -3,12 +3,11 @@ import Header from '../../components/Header';
 import Layout from '../../components/Layout';
 import Background from '../../assets/bg3.jpg';
 
-
-
 const HomePage = ({ onChangePage }) => {
   const handleClickButton = (page) => {
     onChangePage && onChangePage(page);
   }
+
   return (
     <>
 

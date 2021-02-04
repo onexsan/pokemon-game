@@ -9,12 +9,12 @@ const Layout = ({ id, title, urlBg, colorBg, children }) => {
   if (colorBg) { style.backgroundColor = colorBg };
 
   return (
-    <section className={cl(s.root)} id={id} style={style} >
-      <div className={cl(s.wrapper)}>
+    <section className={s.root} id={id} style={style} >
+      <div className={s.wrapper}>
         <article>
-          <div className={cl(s.title)}>
+          <div className={s.title}>
             {title && <h3>{title}</h3>}
-            <span className={cl(s.separator)}></span>
+            <span className={s.separator}></span>
           </div>
           <div className={cl(s.desc, s.full)}>
             {children}

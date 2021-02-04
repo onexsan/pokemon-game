@@ -1,6 +1,5 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import cl from 'classnames';
 
 import s from './Header.module.css';
 
@@ -10,14 +9,14 @@ const Header = ({ title, descr, onClickButton }) => {
     history.push("/game");
   }
   return (
-    <header className={cl(s.root)}>
-      <div className={cl(s.forest)}></div>
-      <div className={cl(s.silhouette)}></div>
-      <div className={cl(s.moon)}></div>
-      <div className={cl(s.container)}>
+    <header className={s.root}>
+      <div className={s.forest}></div>
+      <div className={s.silhouette}></div>
+      <div className={s.moon}></div>
+      <div className={s.container}>
         {title && <h1>{title}</h1>}
         {descr && <p>{descr}</p>}
-        <button className={cl(s.routeButton)} onClick={handleClick}>
+        <button className={s.routeButton} onClick={handleClick}>
           Start Game
         </button>
       </div>

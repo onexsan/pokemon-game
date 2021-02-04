@@ -31,8 +31,8 @@ const Menu = ({ isOpen, onChangeActive }) => {
       [s.active]: isOpen === true,
       [s.deactive]: isOpen === false
     })}>
-      <div className={cl(s.overlay)} />
-      <div className={cl(s.menuItems)}>
+      <div className={s.overlay} />
+      <div className={s.menuItems}>
         <ul>
           {MENU.map(({ title, to }, index) => (
             <li key={index}>
