@@ -1,8 +1,31 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import cl from 'classnames';
 import s from './Menu.module.css';
 
-const Menu = ({ isOpen }) => {
+const MENU = [
+  {
+    title: "HOME",
+    to: "/"
+  },
+  {
+    title: "GAME",
+    to: "/game"
+  },
+  {
+    title: "ABOUT",
+    to: "/about"
+  },
+  {
+    title: "CONTACT",
+    to: "/contact"
+  },
+];
+
+const Menu = ({ isOpen, onChangeActive }) => {
+  const onMenuClick = () => {
+    onChangeActive && onChangeActive();
+  }
   return (
     <div className={cl(s.menuContainer, {
       [s.active]: isOpen === true,
@@ -11,26 +34,11 @@ const Menu = ({ isOpen }) => {
       <div className={cl(s.overlay)} />
       <div className={cl(s.menuItems)}>
         <ul>
-          <li>
-            <a href="#welcome">
-              HOME
-        </a>
-          </li>
-          <li>
-            <a href="#game">
-              GAME
-        </a>
-          </li>
-          <li>
-            <a href="#about">
-              ABOUT
-        </a>
-          </li>
-          <li>
-            <a href="#contact">
-              CONTACT
-        </a>
-          </li>
+          {MENU.map(({ title, to }, index) => (
+            <li key={index}>
+              <Link to={to} onClick={onMenuClick}>{title}</Link>
+            </li>
+          ))}
         </ul>
       </div>
     </div>
