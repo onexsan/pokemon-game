@@ -20,11 +20,18 @@ h1 {
   line-height: 65px;
 }
 
-.homeButton {
-  cursor: pointer;
+.addButton {
+  background-color: #f300b4;
+  color: #fff;
+  border: 1px solid transparent;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 10px;
 }
 
-.homeButton:hover img {
-  filter: grayscale(100);
+.addButton:hover {
+  background-color: transparent;
+  color: #f300b4;
+  border: 1px solid #f300b4;
   transition: .5s;
 }
