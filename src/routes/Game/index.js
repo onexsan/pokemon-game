@@ -15,9 +15,8 @@ const GamePage = () => {
   useEffect(() => {
     database.ref('pokemons').once('value', (snapshot) => {
       setPokemons(snapshot.val());
-      console.log(snapshot.val());
     })
-  }, [])
+  }, [pokemons])
 
   const onCardClick = (id) => {
     setPokemons(prevState => {
