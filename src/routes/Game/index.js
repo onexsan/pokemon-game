@@ -1,24 +1,38 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Layout from '../../components/Layout';
 import PokemonCard from '../../components/PokemonCard';
 
+import database from '../../service/firebase'
+
 import style from './style.module.css';
 
-import POKEMONS from '../../data/pokemon.json';
+// import POKEMONS from '../../data/pokemon.json';
 
 const GamePage = () => {
-  const [pokemons, setPokemons] = useState(POKEMONS);
+  const [pokemons, setPokemons] = useState({});
+
+  useEffect(() => {
+    database.ref('pokemons').once('value', (snapshot) => {
+      setPokemons(snapshot.val());
+    })
+  }, [])
 
   const onCardClick = (id) => {
     setPokemons(prevState => {
-      return prevState.map(pokemons => {
-        if (pokemons.id === id) {
-          pokemons.isActive = !pokemons.isActive;
-        }
-        return { ...pokemons };
-      });
-    })
+      return Object.entries(prevState).reduce((acc, item) => {
+        const pokemon = { ...item[1] };
+        if (pokemon.id === id) {
+          pokemon.isActive = !pokemon.isActive;
+        };
+
+        acc[item[0]] = pokemon;
+
+
+
+        return acc;
+      }, {});
+    });
   };
 
   return (
@@ -27,7 +41,7 @@ const GamePage = () => {
       <Layout title="Cards" colorBg="#EFFBB5" >
         <div className={style.flex}>
           {
-            pokemons.map((item, index) => <PokemonCard onCardClick={onCardClick} isActive={item.isActive} key={index} name={item.name} img={item.img} id={item.id} type={item.type} values={item.values} />)
+            Object.entries(pokemons).map(([key, { name, img, id, type, values, isActive }]) => <PokemonCard onCardClick={onCardClick} isActive={isActive} key={key} name={name} img={img} id={id} type={type} values={values} />)
           }
         </div>
       </Layout>
