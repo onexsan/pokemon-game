@@ -12,12 +12,11 @@ const GamePage = () => {
 
   const onCardClick = (id) => {
     setPokemons(prevState => {
-      const newState = Array.from(prevState);
-      return newState.map(pokemons => {
+      return prevState.map(pokemons => {
         if (pokemons.id === id) {
           pokemons.isActive = !pokemons.isActive;
         }
-        return pokemons;
+        return { ...pokemons };
       });
     })
   };
