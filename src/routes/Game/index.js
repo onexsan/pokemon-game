@@ -7,8 +7,6 @@ import database from '../../service/firebase'
 
 import style from './style.module.css';
 
-// import POKEMONS from '../../data/pokemon.json';
-
 const GamePage = () => {
   const [pokemons, setPokemons] = useState({});
 
@@ -23,13 +21,11 @@ const GamePage = () => {
       return Object.entries(prevState).reduce((acc, item) => {
         const pokemon = { ...item[1] };
         if (pokemon.id === id) {
-          pokemon.isActive = !pokemon.isActive;
-          database.ref('pokemons/' + item[0]).set({ ...item[1], isActive: pokemon.isActive });
+          database.ref('pokemons/' + item[0]).set({ ...item[1], isActive: !pokemon.isActive });
         };
 
         acc[item[0]] = pokemon;
         // database.ref('pokemons').update(acc);
-
 
         return acc;
       }, {});
