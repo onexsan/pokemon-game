@@ -1,32 +1,33 @@
 import React from 'react';
-import cl from 'classnames';
+import { useState } from 'react';
 import Layout from '../../components/Layout';
 import PokemonCard from '../../components/PokemonCard';
-import MenuHeader from '../../components/MenuHeader';
-import homeIcon from '../../assets/home.png'
 
 import style from './style.module.css';
 
 import POKEMONS from '../../data/pokemon.json';
 
-const GamePage = ({ onChangePage }) => {
-  const handleClick = () => {
-    onChangePage && onChangePage('app');
-  }
+const GamePage = () => {
+  const [pokemons, setPokemons] = useState(POKEMONS);
+
+  const onCardClick = (id) => {
+    setPokemons(prevState => {
+      return prevState.map(pokemons => {
+        if (pokemons.id === id) {
+          pokemons.isActive = !pokemons.isActive;
+        }
+        return { ...pokemons };
+      });
+    })
+  };
+
   return (
     <>
-      <MenuHeader bgActive={true}></MenuHeader>
-      <div className={cl(style.flex, style.spaceEvenly)}>
-        <h1>The Game Page</h1>
-        <span className={style.homeButton} onClick={handleClick}>
-          <img src={homeIcon} alt="home"></img>
-        </span>
-      </div>
 
-      <Layout id="my-prop-id" title="Cards" colorBg="#EFFBB5" >
-        <div className={cl(style.flex)}>
+      <Layout title="Cards" colorBg="#EFFBB5" >
+        <div className={style.flex}>
           {
-            POKEMONS.map((item, index) => <PokemonCard key={index} name={item.name} img={item.img} id={item.id} type={item.type} values={item.values} />)
+            pokemons.map((item, index) => <PokemonCard onCardClick={onCardClick} isActive={item.isActive} key={index} name={item.name} img={item.img} id={item.id} type={item.type} values={item.values} />)
           }
         </div>
       </Layout>

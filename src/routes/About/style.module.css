@@ -1,0 +1,15 @@
+.routeButton {
+  background-color: #f300b4;
+  color: #fff;
+  border: 1px solid transparent;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 10px;
+}
+
+.routeButton:hover {
+  background-color: transparent;
+  color: #f300b4;
+  border: 1px solid #f300b4;
+  transition: .5s;
+}
