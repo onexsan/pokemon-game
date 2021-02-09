@@ -4,20 +4,20 @@ import { Link } from 'react-router-dom';
 import Layout from '../../../../components/Layout';
 import PokemonCard from '../../../../components/PokemonCard';
 
-import database from '../../../../service/firebase'
+// import database from '../../../../service/firebase'
 import { PokemonContext } from '../../../../context/pokemonContext.js'
+import { FirebaseContext } from '../../../../context/firebaseContext.js'
 
 import style from './style.module.css';
 
 const GamePage = () => {
-
+  const firebase = useContext(FirebaseContext);
   const [pokemons, setPokemons] = useState({});
   const SelectedContext = useContext(PokemonContext);
-  console.log(SelectedContext);
 
   useEffect(() => {
-    database.ref('pokemons').once('value', (snapshot) => {
-      setPokemons(snapshot.val());
+    firebase.getPokemonSocket((pokemons) => {
+      setPokemons(pokemons);
     })
   }, []);
 
@@ -32,7 +32,6 @@ const GamePage = () => {
         };
 
         acc[item[0]] = pokemon;
-
 
         return acc;
       }, {});
@@ -50,7 +49,7 @@ const GamePage = () => {
         <div className={style.flex}>
           <Link className={style.addButton} to={"/game/board"}>
             Start Game
-            </Link>
+          </Link>
         </div>
         <div className={style.flex}>
           {

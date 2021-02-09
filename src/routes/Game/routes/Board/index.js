@@ -8,7 +8,6 @@ import s from './style.module.css';
 const BoardPage = () => {
 
   const SelectedContext = useContext(PokemonContext);
-  console.log(SelectedContext.pokemon);
 
   return (
     <div className={s.root}>
