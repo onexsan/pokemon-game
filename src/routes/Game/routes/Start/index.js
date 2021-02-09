@@ -10,7 +10,7 @@ import { FirebaseContext } from '../../../../context/firebaseContext.js'
 
 import style from './style.module.css';
 
-const GamePage = () => {
+const StartPage = () => {
   const firebase = useContext(FirebaseContext);
   const [pokemons, setPokemons] = useState({});
   const SelectedContext = useContext(PokemonContext);
@@ -61,4 +61,4 @@ const GamePage = () => {
   );
 };
 
-export default GamePage;
+export default StartPage;
