@@ -11,15 +11,17 @@ import { FirebaseContext } from '../../../../context/firebaseContext.js'
 import style from './style.module.css';
 
 const StartPage = () => {
-  const firebase = useContext(FirebaseContext);
+
   const [pokemons, setPokemons] = useState({});
   const SelectedContext = useContext(PokemonContext);
+
+  const firebase = useContext(FirebaseContext);
 
   useEffect(() => {
     firebase.getPokemonSocket((pokemons) => {
       setPokemons(pokemons);
     })
-  }, []);
+  }, [firebase]);
 
 
   const onCardClick = (id) => {
