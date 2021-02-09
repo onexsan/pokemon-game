@@ -2,7 +2,7 @@
 import React from 'react';
 import { useRouteMatch, Switch, Route, Redirect } from 'react-router-dom';
 import cl from 'classnames';
-import GamePage from './routes/Game';
+import GamePage from './routes/Game/routes';
 import AboutPage from './routes/About';
 import ContactPage from './routes/Contact';
 import HomePage from './routes/Home';
