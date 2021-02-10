@@ -46,10 +46,12 @@ const StartPage = () => {
     <>
 
       <Layout title="Cards" colorBg="#EFFBB5" >
+
         <div className={s.buttonWrap}>
           <button className={s.addButton} onClick={onButtonClick} disabled={Object.keys(SelectedContext.pokemons).length < 5}>
-            Start Game
+            Start
           </button>
+          <p>Please select 5 Pokemons to start</p>
         </div>
 
         <div className={s.flex}>
