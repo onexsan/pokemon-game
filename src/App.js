@@ -18,7 +18,7 @@ import Firebase from './service/firebase';
 const App = () => {
   const location = useLocation();
   const isPadding = location.pathname === '/' || location.pathname === '/game/board'
-  const isBorders = location.pathname === '/game';
+  const isBorders = location.pathname === '/game' || location.pathname === '/game/finish';
   return (
     <FirebaseContext.Provider value={new Firebase()}>
       <Switch>

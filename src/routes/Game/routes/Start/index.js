@@ -13,6 +13,7 @@ const StartPage = () => {
 
   const [pokemons, setPokemons] = useState({});
   const SelectedContext = useContext(PokemonContext);
+
   const firebase = useContext(FirebaseContext);
   const history = useHistory();
 

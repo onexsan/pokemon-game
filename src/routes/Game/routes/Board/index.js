@@ -25,19 +25,26 @@ const counterWin = (board, player1, player2) => {
 
 const BoardPage = () => {
 
-  const { pokemons } = useContext(PokemonContext);
+  const AllPokemons = useContext(PokemonContext);
+
   const history = useHistory();
+  if (Object.keys(AllPokemons.pokemons).length === 0) {
+    history.replace('/game');
+  }
 
   const [board, setBoard] = useState([]);
+  const [choiceCard, setChoiceCard] = useState(null);
+  const [steps, setSteps] = useState(0);
+
+
   const [player1, setPlayer1] = useState(() => {
-    return Object.values(pokemons).map(item => ({
+    return Object.values(AllPokemons.pokemons).map(item => ({
       ...item,
       possession: 'blue',
     }))
   });
+
   const [player2, setPlayer2] = useState([]);
-  const [choiceCard, setChoiceCard] = useState(null);
-  const [steps, setSteps] = useState(0);
 
   useEffect(async () => {
     const boardResponse = await fetch('https://reactmarathon-api.netlify.app/api/board');
@@ -48,13 +55,17 @@ const BoardPage = () => {
     const player2Response = await fetch('https://reactmarathon-api.netlify.app/api/create-player');
     const player2Request = await player2Response.json();
 
+
     setPlayer2(() => {
       return player2Request.data.map(item => ({
         ...item,
         possession: 'red',
       }))
     });
+
   }, []);
+
+
 
   const handleClickBoardPlate = async (position) => {
 
@@ -92,23 +103,26 @@ const BoardPage = () => {
   }
 
   useEffect(() => {
+    if (steps === 1) {
+      console.log(player2);
+      AllPokemons.handlePlayer2(player2);
+    }
+
     if (steps === 9) {
       const [count1, count2] = counterWin(board, player1, player2);
 
       if (count1 > count2) {
-        alert('win')
+        AllPokemons.handleWin(true);
+        history.replace('/game/finish');
       } else if (count1 < count2) {
-        alert('lose')
+        AllPokemons.handleWin(false);
+        history.replace('/game/finish');
       } else {
-        alert('draw')
+        AllPokemons.handleWin(false);
+        history.replace('/game/finish');
       }
     }
   }, [steps])
-
-
-  if (Object.keys(pokemons).length === 0) {
-    history.replace('/game');
-  }
 
   return (
     <div className={s.root}>
