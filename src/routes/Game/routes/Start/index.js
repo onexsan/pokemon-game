@@ -13,6 +13,7 @@ const StartPage = () => {
 
   const [pokemons, setPokemons] = useState({});
   const SelectedContext = useContext(PokemonContext);
+
   const firebase = useContext(FirebaseContext);
   const history = useHistory();
 
@@ -56,7 +57,7 @@ const StartPage = () => {
 
         <div className={s.flex}>
           {
-            Object.entries(pokemons).map(([key, { name, img, id, type, values, isActive, isSelected }]) =>
+            Object.entries(pokemons).map(([key, { name, img, id, type, values, isSelected }]) =>
               <PokemonCard
                 className={s.card}
                 onCardClick={() => {

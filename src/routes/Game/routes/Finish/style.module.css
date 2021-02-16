@@ -1,0 +1,41 @@
+.flex {
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; */
+
+  display: grid;
+grid-template-columns: 220px 220px 220px 220px 220px;
+grid-gap: 10px;
+margin-top: 20px;
+margin-bottom: 20px;
+}
+
+.routeButton {
+  background-color: #f300b4;
+  color: #fff;
+  border: 1px solid transparent;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 10px;
+}
+
+.routeButton:hover {
+  background-color: transparent;
+  color: #f300b4;
+  border: 1px solid #f300b4;
+  transition: .5s;
+}
+.cardBoard {
+  width: 100%;
+  max-width: 18vw;
+  height: 350px;
+}
+
+.cardBoard:first-child {
+  margin-top: 0;
+}
+
+.buttonDiv {
+  text-align: center;
+}
