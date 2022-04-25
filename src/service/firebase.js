@@ -11,13 +11,22 @@ import 'firebase/database'
 //   appId: "1:472757784550:web:f67db61ae227666a07d027"
 // };
 
+// var firebaseConfig = {
+//   apiKey: "AIzaSyDMhHpaqH4A_UKwamUed8aqvz58YMupAac",
+//   authDomain: "new-poke-game.firebaseapp.com",
+//   projectId: "new-poke-game",
+//   storageBucket: "new-poke-game.appspot.com",
+//   messagingSenderId: "749710256007",
+//   appId: "1:749710256007:web:ccde0f68b2f2e1ba341522"
+// };
 var firebaseConfig = {
-  apiKey: "AIzaSyDMhHpaqH4A_UKwamUed8aqvz58YMupAac",
-  authDomain: "new-poke-game.firebaseapp.com",
-  projectId: "new-poke-game",
-  storageBucket: "new-poke-game.appspot.com",
-  messagingSenderId: "749710256007",
-  appId: "1:749710256007:web:ccde0f68b2f2e1ba341522"
+  apiKey: "AIzaSyCD_6LkCjvAENasq7eKPzQg1MAFW7NuFUs",
+  authDomain: "pokegame-f701f.firebaseapp.com",
+  databaseURL: "https://pokegame-f701f-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "pokegame-f701f",
+  storageBucket: "pokegame-f701f.appspot.com",
+  messagingSenderId: "837012556564",
+  appId: "1:837012556564:web:867a166940586d55209001"
 };
 
 firebase.initializeApp(firebaseConfig);
