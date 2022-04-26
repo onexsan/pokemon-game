@@ -1,4 +1,11 @@
-# Getting Started with Create React App
+# Игра Triple triad на React
+- https://elegant-bhaskara-b282a5.netlify.app/ (временный деплой на Netlify)
+- Учебный проект (написан за ~3 недели в ходе марафона [Зара Захарова](https://drive.google.com/file/d/10yxyMQGxsL6kE1foMB6t09JqyLCBUJzc/view))
+- В приложении можно поиграть в карточную игру и зарабатывать новые карточки с покемонами (сохраняются в базу данных Firebase)
+- Приложение общается с открытым Poke API
+- **Стек**: React.js, CSS, Firebase
+
+![image](https://user-images.githubusercontent.com/18422338/165311382-afa55a88-d4cd-4d5e-b0d9-2520b6e0b981.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
